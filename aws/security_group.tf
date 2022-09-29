@@ -11,6 +11,15 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["2001:db8::/32"]
   }
+    ingress {
+    description      = "RDP from anywhere"
+    from_port        = 3389
+    to_port          = 3389
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["2001:db8::/32"]
+  }
+
 
   egress {
     from_port        = 0
